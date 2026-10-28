@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ❓ Question or idea discussion
+    url: https://github.com/Amar1907-creator/india-trading-skills/discussions
+    about: Ask how to use a skill, share results, or discuss ideas.
+  - name: 🔒 Security issue
+    url: https://github.com/Amar1907-creator/india-trading-skills/security/advisories/new
+    about: Report privately. Please don't open a public issue.

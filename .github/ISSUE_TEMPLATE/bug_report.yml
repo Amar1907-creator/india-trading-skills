@@ -1,0 +1,50 @@
+name: 🐛 Bug report
+description: Something gives a wrong number, crashes, or doesn't work as described
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! **Never paste broker logins, OTPs, API keys or account numbers here.**
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Which skill?
+      options:
+        - india-market-pulse
+        - india-stock-explainer
+        - india-position-sizer
+        - india-news-impact
+        - india-sector-rotation
+        - beginner-trading-coach
+        - india-trading-navigator
+        - Not sure / installation
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you asked Claude (or the command you ran), and what you got.
+      placeholder: I asked "explain TATASTEEL" and the script said...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Error message or output
+      render: text
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python version (python3 --version), Claude Code desktop or terminal
+      placeholder: macOS 15, Python 3.12, Claude Code desktop
+    validations:
+      required: true

@@ -1,0 +1,36 @@
+name: 💡 Feature or new skill request
+description: Suggest an improvement or a new Indian market skill
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: Describe the trading or learning task, e.g. "see FII/DII flows for the last month".
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could a skill help?
+      description: What would you ask Claude, and what should it answer?
+  - type: input
+    id: data
+    attributes:
+      label: Free data source (if you know one)
+      placeholder: e.g. NSE reports page, RBI website
+  - type: dropdown
+    id: level
+    attributes:
+      label: Who is it for?
+      options:
+        - Beginners
+        - Experienced traders
+        - Both
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Project rules
+      options:
+        - label: I understand skills explain and educate, and never give buy/sell calls or place trades.
+          required: true

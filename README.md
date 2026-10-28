@@ -1,13 +1,13 @@
 # 🇮🇳 India Trading Skills for Claude
 
-[![tests](https://github.com/Amar1907-creator/india-trading-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/Amar1907-creator/india-trading-skills/actions/workflows/tests.yml) ![No API key](https://img.shields.io/badge/API%20key-not%20needed-brightgreen) ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+[![tests](https://github.com/Amar1907-creator/india-trading-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/Amar1907-creator/india-trading-skills/actions/workflows/tests.yml) ![No API key](https://img.shields.io/badge/API%20key-not%20needed-brightgreen) ![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-orange)](CONTRIBUTING.md)
 
 **Claude skills that understand the Indian stock market (NSE/BSE): for first-time Groww users and experienced traders.**
 
 Ask Claude *"How is the market today?"*, *"Explain Infosys stock"*, *"Aaj market kyu gira?"* or
 *"I have ₹50,000, how many shares should I buy?"*, and get a clear, sourced, honest answer.
 
-- ✅ **No API key, no paid data, no installs.** It only needs Python, which Claude Code uses anyway.
+- ✅ **No API key, no paid data, no installs.** It only needs Python 3.9+, with no extra packages.
 - ✅ **Live data** for Nifty, Bank Nifty, Sensex, India VIX, 16 sector indices and any NSE/BSE stock
 - ✅ **Real Indian charges** (STT, stamp duty, GST, DP charges) in position sizing
 - ✅ **Beginner-friendly**, in English, Hindi or Hinglish
@@ -15,6 +15,8 @@ Ask Claude *"How is the market today?"*, *"Explain Infosys stock"*, *"Aaj market
 - ✅ Works alongside the popular US [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills)
 
 > ⚠️ **For learning and research only. Not investment advice.** See the [disclaimer](#disclaimer).
+
+**Contents:** [Skills](#the-skills) · [Install](#install-2-minutes) · [Daily routine](#a-10-minute-daily-routine) · [How it works](#how-it-works) · [Docs](#documentation) · [Roadmap](#roadmap) · [Contributing](#contributing) · [Disclaimer](#disclaimer)
 
 ---
 
@@ -124,14 +126,26 @@ New to the market? Start with **beginner-trading-coach**: *"start lesson 1"*.
 
 Want one of these sooner? Open an issue. Pull requests are welcome.
 
+## Documentation
+
+| Guide | For |
+|-------|-----|
+| [Getting started](docs/getting-started.md) | Installing and your first conversation, plus troubleshooting |
+| [Skills reference](docs/skills.md) | What every skill does, example prompts and script options |
+| [Architecture](docs/architecture.md) | How skills, scripts and data sources fit together |
+| [FAQ](docs/faq.md) | Cost, safety, accuracy and Hindi support |
+| [Changelog](CHANGELOG.md) | What changed in each version |
+
 ## Contributing
 
+Contributions are welcome: bug reports, new skills, better explanations and translations.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md), then:
+
 ```bash
-python3 -m unittest discover tests      # offline tests, no network needed
-python3 scripts/sync_shared.py          # after editing shared/india_data.py
+make check     # sync helper copies, lint, and run offline tests
 ```
 
-Each skill is self-contained in `skills/<name>/` (SKILL.md, plus optional `scripts/` and `references/`).
+Found a security problem? Please follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
 
 ## Credits
 

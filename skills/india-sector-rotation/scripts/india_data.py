@@ -126,9 +126,9 @@ def rsi(values, n=14):
     gains = [max(values[i] - values[i - 1], 0) for i in range(1, len(values))]
     losses = [max(values[i - 1] - values[i], 0) for i in range(1, len(values))]
     avg_g, avg_l = sum(gains[:n]) / n, sum(losses[:n]) / n
-    for g, l in zip(gains[n:], losses[n:]):
-        avg_g = (avg_g * (n - 1) + g) / n
-        avg_l = (avg_l * (n - 1) + l) / n
+    for gain, loss in zip(gains[n:], losses[n:]):
+        avg_g = (avg_g * (n - 1) + gain) / n
+        avg_l = (avg_l * (n - 1) + loss) / n
     if avg_l == 0:
         return 100.0
     return 100 - 100 / (1 + avg_g / avg_l)

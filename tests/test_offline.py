@@ -121,6 +121,15 @@ class RepoHygieneTests(unittest.TestCase):
             self.assertEqual(m.group(1).strip(), skill.name)
             self.assertLessEqual(len(m.group(2)), 1024, f"{skill.name}: description too long")
 
+    def test_skills_index_matches_folders(self):
+        index = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
+        names = {s["name"] for s in index["skills"]}
+        folders = {p.name for p in (ROOT / "skills").iterdir() if p.is_dir()}
+        self.assertEqual(names, folders, "skills.json is out of date")
+        for s in index["skills"]:
+            if s["script"]:
+                self.assertTrue((ROOT / "skills" / s["name"] / s["script"]).exists(), s)
+
     def test_referenced_files_exist(self):
         for skill in (ROOT / "skills").iterdir():
             text = (skill / "SKILL.md").read_text(encoding="utf-8")
