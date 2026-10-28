@@ -30,6 +30,7 @@ Ask Claude *"How is the market today?"*, *"Explain Infosys stock"*, *"Aaj market
 | 🧮 **india-position-sizer** | "₹1 lakh capital, entry 1200, stop 1150" | Exact shares or lots, max loss including all charges, reward:risk, and a check that the stop isn't too tight |
 | 📰 **india-news-impact** | "Why did the market fall today?" | Today's news ranked by impact, which sectors are affected and why, with sources |
 | 🔄 **india-sector-rotation** | "Which sector is strong?" | 16 sectors ranked vs Nifty: LEADING / IMPROVING / WEAKENING / LAGGING |
+| 💼 **india-portfolio-review** | "Review my Groww portfolio" | Value, P&L, weights, concentration, deep losses, downtrends and sector mix vs Nifty. **Read-only**: works with Groww MCP or a holdings CSV, and never places orders |
 | 🎓 **beginner-trading-coach** | "Teach me trading from zero" | A 4-week course, simple glossary, quizzes, and scam warnings |
 
 ### Example: India Market Pulse
@@ -101,6 +102,7 @@ The navigator automatically sends US questions to those skills. Many of them nee
 2. **india-news-impact**: why?
 3. **india-sector-rotation** (weekly): where is the strength?
 4. Before any trade: **india-stock-explainer** + **india-position-sizer**
+5. Monthly: **india-portfolio-review**
 
 New to the market? Start with **beginner-trading-coach**: *"start lesson 1"*.
 

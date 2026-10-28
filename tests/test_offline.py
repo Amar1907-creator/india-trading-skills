@@ -97,6 +97,58 @@ class SectorTests(unittest.TestCase):
         self.assertEqual(q(-1, -1), "LAGGING")
 
 
+class PortfolioTests(unittest.TestCase):
+    def setUp(self):
+        import tempfile
+        self.mod = load("india-portfolio-review", "portfolio_review.py")
+        self.tmp = tempfile.TemporaryDirectory()
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def write(self, name, text):
+        path = pathlib.Path(self.tmp.name) / name
+        path.write_text(text, encoding="utf-8")
+        return str(path)
+
+    def test_loads_broker_style_columns(self):
+        path = self.write("h.csv", "Trading Symbol,Qty,Average Price\nTCS,5,\"3,200.50\"\nINFY,0,1500\nBAD,x,1\n")
+        # header names with spaces normalise to underscores
+        path2 = self.write("z.csv", "tradingsymbol,quantity,average_price\nRELIANCE,10,1400\n")
+        h, problems = self.mod.load_holdings(path)
+        self.assertEqual([x["input"] for x in h], ["TCS"])      # zero qty dropped, bad number reported
+        self.assertAlmostEqual(h[0]["avg_price"], 3200.5)
+        self.assertEqual(len(problems), 1)
+        self.assertEqual(self.mod.load_holdings(path2)[0][0]["quantity"], 10)
+
+    def test_loads_json(self):
+        path = self.write("h.json", json.dumps({"holdings": [{"symbol": "ITC", "qty": 50, "avg_price": 420}]}))
+        self.assertEqual(self.mod.load_holdings(path)[0][0]["input"], "ITC")
+
+    def test_review_flags(self):
+        def fake_history(symbol, rng="1y", interval="1d"):
+            price = {"^NSEI": 100, "BIG.NS": 100, "LOSER.NS": 50}.get(symbol, 100)
+            bars = [{"date": str(i), "open": price, "high": price, "low": price, "close": price, "volume": 1}
+                    for i in range(250)]
+            return {"symbol": symbol, "name": symbol, "bars": bars}
+        self.mod.fetch_history = fake_history
+        out = self.mod.review([
+            {"input": "BIG", "quantity": 100, "avg_price": 100},
+            {"input": "LOSER", "quantity": 10, "avg_price": 100},
+        ])
+        self.assertAlmostEqual(out["total_value"], 10500)
+        self.assertAlmostEqual(out["total_pnl"], -500)
+        joined = " ".join(out["flags"])
+        self.assertIn("BIG.NS is 95.2%", joined)
+        self.assertIn("LOSER.NS is 50.0% below", joined)
+        self.assertIn("only 2 stocks", joined)
+
+    def test_script_has_no_order_code(self):
+        text = (ROOT / "skills/india-portfolio-review/scripts/portfolio_review.py").read_text(encoding="utf-8").lower()
+        for word in ("place_order", "placeorder", "cancel_order", "modify_order", "/orders"):
+            self.assertNotIn(word, text)
+
+
 class PulseTests(unittest.TestCase):
     def test_trend_rules(self):
         trend_of = load("india-market-pulse", "market_pulse.py").trend_of

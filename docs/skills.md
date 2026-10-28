@@ -11,6 +11,7 @@ and cite sources.
 | [india-position-sizer](#india-position-sizer) | All | ✅ | |
 | [india-news-impact](#india-news-impact) | All | | ✅ |
 | [india-sector-rotation](#india-sector-rotation) | Intermediate | ✅ | ✅ |
+| [india-portfolio-review](#india-portfolio-review) | All | ✅ | |
 | [beginner-trading-coach](#beginner-trading-coach) | Beginner | | |
 
 ---
@@ -79,6 +80,23 @@ WEAKENING / LAGGING, and explains the drivers.
 ```bash
 python3 skills/india-sector-rotation/scripts/sector_rotation.py [--json]
 ```
+
+## india-portfolio-review
+
+Read-only portfolio check-up: invested vs current value, P&L, weight of each stock, concentration (one stock above 20%,
+top 3 above 60%), holdings 20%+ below average price, holdings below the 200-day average, sector mix, and 1- and
+3-month performance vs Nifty.
+
+Holdings come from a broker connector such as **Groww MCP** (read tools only) or from a CSV/JSON you export from
+Groww, Zerodha or any broker. **It never places, modifies or cancels orders**, and holdings files are git-ignored.
+
+**Try:** "Review my Groww portfolio" · "Mera portfolio kaisa hai?"
+
+```bash
+python3 skills/india-portfolio-review/scripts/portfolio_review.py holdings.csv [--json]
+```
+
+CSV columns: `symbol, quantity, avg_price` (common broker names such as `Trading Symbol`, `Qty` and `Average buy price` also work).
 
 ## beginner-trading-coach
 

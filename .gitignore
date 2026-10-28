@@ -2,3 +2,10 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+
+# Personal portfolio files must never be committed
+*holdings*.csv
+*holdings*.json
+*portfolio*.csv
+*portfolio*.json
+!skills/india-portfolio-review/references/sample-holdings.csv

@@ -25,6 +25,7 @@ Pick the right tool for the user's goal and explain the next step simply.
 | How many shares to buy | `india-position-sizer` | "I have ₹50,000, entry 500, stop 480" |
 | Why is the market moving? | `india-news-impact` | "Aaj market kyu gira?" |
 | Which sectors are strong? | `india-sector-rotation` | "Which sector is leading?" |
+| Check my own portfolio | `india-portfolio-review` | "Review my Groww portfolio" |
 
 ### Suggested daily routine (about 10 minutes)
 1. `india-market-pulse` → is the mood HEALTHY, MIXED or WEAK?

@@ -1,12 +1,69 @@
 {
   "version": "1.0.0",
   "skills": [
-    {"name": "india-trading-navigator", "category": "start-here", "level": "all", "script": null, "needs_api_key": false, "web_search": false},
-    {"name": "india-market-pulse", "category": "market-regime", "level": "all", "script": "scripts/market_pulse.py", "needs_api_key": false, "web_search": true},
-    {"name": "india-stock-explainer", "category": "stock-research", "level": "all", "script": "scripts/stock_snapshot.py", "needs_api_key": false, "web_search": true},
-    {"name": "india-position-sizer", "category": "risk-management", "level": "all", "script": "scripts/position_size.py", "needs_api_key": false, "web_search": false},
-    {"name": "india-news-impact", "category": "news", "level": "all", "script": null, "needs_api_key": false, "web_search": true},
-    {"name": "india-sector-rotation", "category": "market-regime", "level": "intermediate", "script": "scripts/sector_rotation.py", "needs_api_key": false, "web_search": true},
-    {"name": "beginner-trading-coach", "category": "education", "level": "beginner", "script": null, "needs_api_key": false, "web_search": false}
+    {
+      "name": "india-trading-navigator",
+      "category": "start-here",
+      "level": "all",
+      "script": null,
+      "needs_api_key": false,
+      "web_search": false
+    },
+    {
+      "name": "india-market-pulse",
+      "category": "market-regime",
+      "level": "all",
+      "script": "scripts/market_pulse.py",
+      "needs_api_key": false,
+      "web_search": true
+    },
+    {
+      "name": "india-stock-explainer",
+      "category": "stock-research",
+      "level": "all",
+      "script": "scripts/stock_snapshot.py",
+      "needs_api_key": false,
+      "web_search": true
+    },
+    {
+      "name": "india-position-sizer",
+      "category": "risk-management",
+      "level": "all",
+      "script": "scripts/position_size.py",
+      "needs_api_key": false,
+      "web_search": false
+    },
+    {
+      "name": "india-news-impact",
+      "category": "news",
+      "level": "all",
+      "script": null,
+      "needs_api_key": false,
+      "web_search": true
+    },
+    {
+      "name": "india-sector-rotation",
+      "category": "market-regime",
+      "level": "intermediate",
+      "script": "scripts/sector_rotation.py",
+      "needs_api_key": false,
+      "web_search": true
+    },
+    {
+      "name": "beginner-trading-coach",
+      "category": "education",
+      "level": "beginner",
+      "script": null,
+      "needs_api_key": false,
+      "web_search": false
+    },
+    {
+      "name": "india-portfolio-review",
+      "category": "portfolio",
+      "level": "all",
+      "script": "scripts/portfolio_review.py",
+      "needs_api_key": false,
+      "web_search": false
+    }
   ]
 }

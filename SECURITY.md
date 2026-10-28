@@ -9,6 +9,8 @@ Only the latest release on `main` receives fixes.
 - It **does not** ask for, store or send broker logins, API keys, passwords or OTPs.
 - It **does not** place orders or connect to trading accounts.
 - Scripts only make read-only HTTPS requests for public market prices (Yahoo Finance).
+- `india-portfolio-review` reads holdings you provide (or that a connected broker connector returns) and keeps
+  them on your computer. Holdings files are git-ignored.
 
 If you find code that breaks any of these, treat it as a security issue.
 
