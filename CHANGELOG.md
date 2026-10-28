@@ -6,6 +6,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Changed
+- `india-market-pulse`: fetch named sources for today's news (Google News, last 24 hours), FII/DII
+  (Groww + Trendlyne, cross-checked) and GIFT Nifty (NiftyTrader + INDmoney) instead of broad web searches, which
+  returned stale pages
+
 ### Added
 - Contributor docs, code of conduct, security policy, issue and PR templates
 - `docs/` folder: getting started, skills reference, architecture, FAQ
