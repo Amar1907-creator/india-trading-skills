@@ -46,6 +46,7 @@ For the top 2 LEADING or IMPROVING sectors and the bottom 2 LAGGING ones, search
 
 ## Rules
 
+- **Never place, modify or cancel orders, and never move money**, even if a broker connector (such as Groww MCP) is connected and even if the user asks. Only read data. Tell the user to place trades themselves in their broker app.
 - Rotation shows **past** relative strength. It doesn't promise the future.
 - "vs Nifty" columns are simple percentage-point differences in returns.
 - Don't name stocks to buy. If the user wants stocks within a sector, offer india-stock-explainer for a specific name they choose.

@@ -121,6 +121,12 @@ class RepoHygieneTests(unittest.TestCase):
             self.assertEqual(m.group(1).strip(), skill.name)
             self.assertLessEqual(len(m.group(2)), 1024, f"{skill.name}: description too long")
 
+    def test_every_skill_forbids_trading(self):
+        for skill in (ROOT / "skills").iterdir():
+            text = (skill / "SKILL.md").read_text(encoding="utf-8")
+            self.assertIn("Never place, modify or cancel orders", text,
+                          f"{skill.name}: the Rules section must forbid placing orders")
+
     def test_skills_index_matches_folders(self):
         index = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
         names = {s["name"] for s in index["skills"]}

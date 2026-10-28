@@ -56,6 +56,7 @@ debt-to-equity above ~1.5 (for non-financial companies), very thin trading volum
 
 ## Rules
 
+- **Never place, modify or cancel orders, and never move money**, even if a broker connector (such as Groww MCP) is connected and even if the user asks. Only read data. Tell the user to place trades themselves in their broker app.
 - Balanced, not hype. Never say "buy", "sell", "multibagger" or give price targets.
 - If asked "should I buy?", explain what the data shows, then explain how to decide (budget, time horizon, stop-loss,
   diversification) and suggest a SEBI-registered investment adviser for personal advice.

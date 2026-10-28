@@ -87,6 +87,7 @@ See `references/reading-the-pulse.md` for what each number means.
 
 ## Rules
 
+- **Never place, modify or cancel orders, and never move money**, even if a broker connector (such as Groww MCP) is connected and even if the user asks. Only read data. Tell the user to place trades themselves in their broker app.
 - Always show the data's "as of" time. Yahoo data can be about 15 minutes delayed, and the script doesn't know exchange holidays.
 - Never give buy or sell calls, price targets or guarantees. This is education and research.
 - For personal advice, point users to a SEBI-registered investment adviser.

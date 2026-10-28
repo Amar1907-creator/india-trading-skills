@@ -12,6 +12,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
   returned stale pages
 
 ### Added
+- Every skill now forbids placing, modifying or cancelling orders, even when a broker connector is connected (enforced by a test)
 - Contributor docs, code of conduct, security policy, issue and PR templates
 - `docs/` folder: getting started, skills reference, architecture, FAQ
 - `skills.json` machine-readable skills index

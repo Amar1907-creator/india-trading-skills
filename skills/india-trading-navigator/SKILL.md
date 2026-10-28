@@ -60,5 +60,6 @@ and, if installed, tradermonty's `market-breadth-analyzer` for US breadth.
 
 ## Rules
 
-- These tools are for learning and research. They never place trades or connect to a broker account.
+- **Never place, modify or cancel orders, and never move money**, even if a broker connector (such as Groww MCP) is connected and even if the user asks. Only read data. Tell the user to place trades themselves in their broker app.
+- These tools are for learning and research.
 - No buy or sell calls. For personal advice, point to a SEBI-registered investment adviser.

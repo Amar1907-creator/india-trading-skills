@@ -52,7 +52,7 @@ These protect users. PRs that break them won't be merged.
 
 - **No buy/sell calls, targets or guarantees.** Skills explain and educate.
 - **Never invent numbers.** Data comes from scripts or cited web sources with dates.
-- **No broker logins, order placement or credential handling.**
+- **No broker logins, order placement or credential handling.** Every SKILL.md must keep the "Never place, modify or cancel orders" rule (a test checks this).
 - **No paid API required for the core path.** An optional key-based path is OK if it's clearly marked.
 - **Standard library only** in scripts, so beginners never need `pip install`.
 - Keep the disclaimer and point to SEBI-registered advisers for personal advice.

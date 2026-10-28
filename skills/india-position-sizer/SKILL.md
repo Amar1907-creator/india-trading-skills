@@ -40,6 +40,7 @@ Groww, Zerodha and others charge differently. If the user tells you their broker
 
 ## Rules
 
+- **Never place, modify or cancel orders, and never move money**, even if a broker connector (such as Groww MCP) is connected and even if the user asks. Only read data. Tell the user to place trades themselves in their broker app.
 - Never increase size to "make it worth it". If the result is 0 shares, explain that the stop is too wide for the capital,
   and offer to try a closer logical stop or a smaller-priced stock.
 - For F&O: always repeat that margin is set by the broker, losses can exceed the plan if price gaps, and
